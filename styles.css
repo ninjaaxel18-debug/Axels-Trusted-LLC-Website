@@ -123,3 +123,64 @@ section[id]{scroll-margin-top:18px}
   .concept-picture-wrap>img{width:100%!important;transform:none!important}
   .hero-mobile-cta{flex-direction:row}
 }
+
+
+/* V5.2 — real interactive hero, no baked-in navigation or fake buttons */
+.premium-header{display:block!important;position:sticky;top:0;z-index:3000;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,20,32,.10);box-shadow:0 8px 26px rgba(11,20,32,.07)}
+.premium-header .nav-wrap{height:78px}
+.premium-header .brand img{width:58px;height:58px}
+.premium-header .site-nav{gap:20px}
+.premium-header .site-nav>a:not(.nav-call-button){font-size:.79rem;text-transform:uppercase;letter-spacing:.025em;font-weight:900}
+.nav-call-button{display:inline-flex!important;align-items:center;justify-content:center;padding:11px 16px!important;border-radius:999px;background:#0b1420;color:#fff!important;font-size:.88rem!important}
+.nav-call-button:hover{background:#f56600!important;color:#fff!important}
+
+.interactive-hero{position:relative;min-height:620px;overflow:hidden;background:#fff9f3;border-bottom:1px solid #ece4dc}
+.hero-art{position:absolute;inset:0 0 0 38%;background-image:url('images/hero-illustration.jpg');background-repeat:no-repeat;background-position:center right;background-size:cover;z-index:0}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.98) 34%,rgba(255,255,255,.75) 53%,rgba(255,255,255,.04) 76%);z-index:1;pointer-events:none}
+.interactive-hero-grid{position:relative;z-index:2;min-height:620px;display:grid;grid-template-columns:minmax(0,650px) 1fr;align-items:center;padding:72px 0}
+.interactive-hero-copy{max-width:650px}
+.hero-kicker{margin:0 0 12px;color:#f56600;text-transform:uppercase;font-weight:900;letter-spacing:.035em;font-size:clamp(1rem,1.7vw,1.35rem)}
+.interactive-hero h1{font-family:Manrope,Arial,sans-serif;font-size:clamp(3.2rem,6.7vw,6.5rem);line-height:.89;letter-spacing:-.065em;text-transform:uppercase;margin:0;color:#08111c;font-weight:900}
+.hero-services{font-size:clamp(.98rem,1.45vw,1.24rem);line-height:1.48;font-weight:800;text-transform:uppercase;margin:25px 0 27px;color:#111820}
+.hero-services span{color:#f56600;padding:0 5px}
+.interactive-hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-outline-dark{background:rgba(255,255,255,.78);border:2px solid #0b1420;color:#0b1420;box-shadow:0 12px 30px rgba(11,20,32,.08)}
+.btn-outline-dark:hover{background:#0b1420;color:#fff}
+.interactive-hero-actions .btn{border-radius:8px;min-width:190px;text-transform:uppercase;letter-spacing:.015em}
+.hero-contact-row{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.hero-contact-row a{display:flex;flex-direction:column;padding-left:15px;border-left:3px solid #f56600}
+.hero-contact-row small{text-transform:uppercase;letter-spacing:.1em;color:#6b7177;font-size:.66rem;font-weight:800}
+.hero-contact-row strong{font-size:.91rem;margin-top:2px}
+.hero-contact-row a:hover strong{color:#f56600}
+
+/* Remove every old concept-image interaction layer. */
+.concept-picture-wrap,.concept-hotspot,.hero-mobile-cta{display:none!important}
+section[id]{scroll-margin-top:92px}
+
+@media(max-width:1000px){
+  .premium-header .site-nav{top:78px}
+  .hero-art{inset:0 0 0 31%;background-position:58% center}
+  .hero-shade{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.97) 44%,rgba(255,255,255,.46) 69%,rgba(255,255,255,.04) 100%)}
+  .interactive-hero-grid{grid-template-columns:minmax(0,580px) 1fr}
+}
+@media(max-width:760px){
+  .premium-header .nav-wrap{height:70px}
+  .premium-header .site-nav{top:70px}
+  .interactive-hero{min-height:auto;padding-top:0}
+  .hero-art{position:relative;inset:auto;width:100%;height:360px;background-size:cover;background-position:66% center;z-index:0}
+  .hero-shade{display:none}
+  .interactive-hero-grid{min-height:auto;display:block;padding:34px 0 42px}
+  .interactive-hero-copy{max-width:none;text-align:center}
+  .interactive-hero h1{font-size:clamp(3rem,15vw,4.5rem)}
+  .hero-services br{display:none}
+  .interactive-hero-actions{justify-content:center}
+  .interactive-hero-actions .btn{width:min(100%,340px)}
+  .hero-contact-row{justify-content:center;gap:18px}
+  .hero-contact-row a{align-items:flex-start;text-align:left}
+}
+@media(max-width:480px){
+  .hero-art{height:305px;background-position:65% center}
+  .interactive-hero-actions{flex-direction:column;align-items:center}
+  .hero-contact-row{flex-direction:column;align-items:center}
+  .hero-contact-row a{width:245px}
+}
