@@ -62,7 +62,6 @@
 <a href="tel:+19414049777">Call (941) 404-9777</a>
 </div>
 </div>
-
 <main id="top">
 <section class="hero">
 <div class="container hero-grid">
@@ -240,7 +239,7 @@
 <a href="mailto:axelsllc22@gmail.com"><small>Email</small><strong>axelsllc22@gmail.com</strong></a>
 </div>
 </div>
-<form class="estimate-form" data-recipient="axelsllc22@gmail.com" id="estimateForm">
+<form action="https://formspree.io/f/mqerwokn" class="estimate-form" data-formspree="true" id="estimateForm" method="POST"><input name="_subject" type="hidden" value="New Website Estimate Request - Axels Trusted LLC"/>
 <div class="form-row">
 <label>Full name<input autocomplete="name" name="name" required="" type="text"/></label>
 <label>Phone number<input autocomplete="tel" name="phone" required="" type="tel"/></label>
@@ -262,8 +261,8 @@
 </select>
 </label>
 <label>Project details<textarea name="details" placeholder="What would you like done? Include timing and any important details." required="" rows="5"></textarea></label>
-<button class="btn btn-primary btn-full" type="submit">Create Estimate Request</button>
-<p class="form-note">Submitting opens a ready-to-send email addressed to axelsllc22@gmail.com. No information is stored by this website.</p>
+<button class="btn btn-primary btn-full" type="submit">Create Estimate Request</button><div aria-live="polite" class="form-status" id="formStatus" role="status"></div>
+<p class="form-note">Your request will be sent securely to Axels Trusted LLC. We typically respond as soon as possible.</p>
 </form>
 </div>
 </section>
@@ -286,5 +285,5 @@
 <span>Free Estimate</span>
 <small>Start your project</small>
 </a>
-</body>
+<div aria-hidden="true" class="success-modal" id="successModal"><div aria-labelledby="successTitle" aria-modal="true" class="success-modal-card" role="dialog"><div aria-hidden="true" class="success-check">✓</div><h2 id="successTitle">Estimate request sent!</h2><p>Thank you for contacting Axels Trusted LLC. We received your project details and will reach out shortly.</p><button class="btn btn-primary success-close" type="button">Done</button></div></div></body>
 </html>

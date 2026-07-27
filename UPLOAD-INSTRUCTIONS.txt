@@ -1,6 +1,7 @@
 1. Unzip this package.
-2. In your existing GitHub website folder, keep the hidden .git folder.
-3. Replace the existing website files with everything in this package.
-4. Keep CNAME; it points GitHub Pages to axelstrusted.com.
-5. In GitHub Desktop, commit the changes and click Push origin.
-6. Wait 1-3 minutes, then press Ctrl+F5 on axelstrusted.com.
+2. Replace the existing website files in your GitHub folder with these files.
+3. Keep the hidden .git folder.
+4. Keep CNAME; it points the site to axelstrusted.com.
+5. Commit the changes in GitHub Desktop and click Push origin.
+6. Submit one test estimate from the live website.
+7. Check axelsllc22@gmail.com and confirm the Formspree verification email if Formspree asks.

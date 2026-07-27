@@ -64,25 +64,27 @@ document.querySelectorAll('[data-before-after]').forEach((slider) => {
   updateAligned();
 });
 
-// Route estimate form to the business Gmail with a consistent subject.
-const conversionForm = document.getElementById('estimateForm');
-if (conversionForm) {
-  conversionForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(conversionForm);
-    const recipient = conversionForm.dataset.recipient || 'axelsllc22@gmail.com';
-    const project = data.get('project') || 'Home improvement';
-    const subject = `New Website Estimate Request - ${project}`;
-    const body = [
-      `Name: ${data.get('name') || ''}`,
-      `Phone: ${data.get('phone') || ''}`,
-      `Email: ${data.get('email') || ''}`,
-      `City: ${data.get('city') || ''}`,
-      `Project: ${project}`,
-      '',
-      'Project details:',
-      data.get('details') || ''
-    ].join('\n');
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-}
+
+// Secure Formspree estimate form submission
+const estimateForm = document.getElementById('estimateForm');
+const formStatus = document.getElementById('formStatus');
+const successModal = document.getElementById('successModal');
+const successClose = document.querySelector('.success-close');
+function openSuccessModal(){successModal?.classList.add('open');successModal?.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeSuccessModal(){successModal?.classList.remove('open');successModal?.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+successClose?.addEventListener('click',closeSuccessModal);
+successModal?.addEventListener('click',(event)=>{if(event.target===successModal)closeSuccessModal();});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeSuccessModal();});
+estimateForm?.addEventListener('submit',async(event)=>{
+ event.preventDefault();
+ const submitButton=estimateForm.querySelector('button[type="submit"]');
+ const originalText=submitButton.textContent;
+ submitButton.disabled=true; submitButton.classList.add('is-sending'); submitButton.textContent='Sending request…';
+ formStatus.textContent=''; formStatus.className='form-status';
+ try{
+  const response=await fetch(estimateForm.action,{method:'POST',body:new FormData(estimateForm),headers:{'Accept':'application/json'}});
+  if(!response.ok){const result=await response.json().catch(()=>({}));const message=result?.errors?.map(e=>e.message).join(', ');throw new Error(message||'Your request could not be sent.');}
+  estimateForm.reset(); formStatus.textContent='Your estimate request was sent successfully.'; formStatus.className='form-status success'; openSuccessModal();
+ }catch(error){formStatus.textContent='Something went wrong. Please try again or call (941) 404-9777.'; formStatus.className='form-status error';}
+ finally{submitButton.disabled=false;submitButton.classList.remove('is-sending');submitButton.textContent=originalText;}
+});
