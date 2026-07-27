@@ -1,90 +1,24 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const qs=(s,c=document)=>c.querySelector(s);const qsa=(s,c=document)=>[...c.querySelectorAll(s)];
 
-menuToggle?.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(open));
-});
+const menu=qs('.menu-toggle');const nav=qs('#siteNav');
+menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav?.classList.toggle('open',!open)});
+qsa('#siteNav a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
 
-document.querySelectorAll('.nav-links a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-  });
-});
+qsa('[data-before-after]').forEach(slider=>{const range=qs('.ba-range',slider),layer=qs('.ba-before-layer',slider),handle=qs('.ba-handle',slider);const update=()=>{const v=Number(range.value);layer.style.clipPath=`inset(0 ${100-v}% 0 0)`;handle.style.left=`${v}%`};range.addEventListener('input',update);update()});
 
-document.getElementById('year').textContent = new Date().getFullYear();
+const lightbox=qs('#lightbox'),lightImg=qs('#lightbox img');
+qsa('[data-lightbox]').forEach(btn=>btn.addEventListener('click',()=>{lightImg.src=btn.dataset.lightbox;lightImg.alt=qs('img',btn)?.alt||'Project photo';lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}));
+function closeLightbox(){lightbox?.classList.remove('open');lightbox?.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+qs('.lightbox-close')?.addEventListener('click',closeLightbox);lightbox?.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
 
-const estimateForm = document.getElementById('estimateForm');
-estimateForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const data = new FormData(estimateForm);
-  const subject = encodeURIComponent(`Estimate request: ${data.get('project')} - ${data.get('name')}`);
-  const body = encodeURIComponent(
-`Name: ${data.get('name')}
-Phone: ${data.get('phone')}
-Email: ${data.get('email') || 'Not provided'}
-City: ${data.get('city')}
-Project: ${data.get('project')}
+const successModal=qs('#successModal');
+function openSuccess(){successModal?.classList.add('open');successModal?.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeSuccess(){successModal?.classList.remove('open');successModal?.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+qs('.success-close')?.addEventListener('click',closeSuccess);successModal?.addEventListener('click',e=>{if(e.target===successModal)closeSuccess()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeSuccess()}});
 
-Project details:
-${data.get('details')}`
-  );
+const form=qs('#estimateForm'),status=qs('#formStatus');
+form?.addEventListener('submit',async e=>{e.preventDefault();const button=qs('button[type="submit"]',form),original=button.textContent;button.disabled=true;button.textContent='Sending request…';status.textContent='';status.className='form-status';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!response.ok){const data=await response.json().catch(()=>({}));throw new Error(data?.errors?.map(x=>x.message).join(', ')||'Submission failed')}form.reset();status.textContent='Your estimate request was sent successfully.';status.className='form-status success';openSuccess()}catch(err){status.textContent='Your request could not be sent. Please try again or call (941) 404-9777.';status.className='form-status error'}finally{button.disabled=false;button.textContent=original}});
 
-  // Replace this sample email with your real business email.
-  window.location.href = `mailto:info@axelstrusted.com?subject=${subject}&body=${body}`;
-});
-
-const lightbox=document.getElementById('lightbox');const lightboxImage=document.getElementById('lightboxImage');const lightboxClose=document.querySelector('.lightbox-close');document.querySelectorAll('.gallery-open').forEach(button=>button.addEventListener('click',()=>{lightboxImage.src=button.dataset.image;lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}));function closeLightbox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImage.src='';document.body.style.overflow='';}lightboxClose?.addEventListener('click',closeLightbox);lightbox?.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
-
-
-// Interactive before/after comparison
-document.querySelectorAll('[data-before-after]').forEach((slider) => {
-  const range = slider.querySelector('.ba-range');
-  const beforeWrap = slider.querySelector('.ba-before-wrap');
-  const beforeImage = slider.querySelector('.ba-before');
-  const divider = slider.querySelector('.ba-divider');
-
-  const update = () => {
-    const value = Number(range.value);
-    beforeWrap.style.width = `${value}%`;
-    divider.style.left = `${value}%`;
-    beforeImage.style.width = `${10000 / Math.max(value, 1)}%`;
-  };
-
-  // Keep original image geometry aligned while clipping.
-  const updateAligned = () => {
-    const value = Number(range.value);
-    beforeWrap.style.width = `${value}%`;
-    divider.style.left = `${value}%`;
-    beforeImage.style.width = `${10000 / Math.max(value, 1)}%`;
-  };
-
-  range.addEventListener('input', updateAligned);
-  updateAligned();
-});
-
-
-// Secure Formspree estimate form submission
-const estimateForm = document.getElementById('estimateForm');
-const formStatus = document.getElementById('formStatus');
-const successModal = document.getElementById('successModal');
-const successClose = document.querySelector('.success-close');
-function openSuccessModal(){successModal?.classList.add('open');successModal?.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeSuccessModal(){successModal?.classList.remove('open');successModal?.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-successClose?.addEventListener('click',closeSuccessModal);
-successModal?.addEventListener('click',(event)=>{if(event.target===successModal)closeSuccessModal();});
-document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeSuccessModal();});
-estimateForm?.addEventListener('submit',async(event)=>{
- event.preventDefault();
- const submitButton=estimateForm.querySelector('button[type="submit"]');
- const originalText=submitButton.textContent;
- submitButton.disabled=true; submitButton.classList.add('is-sending'); submitButton.textContent='Sending request…';
- formStatus.textContent=''; formStatus.className='form-status';
- try{
-  const response=await fetch(estimateForm.action,{method:'POST',body:new FormData(estimateForm),headers:{'Accept':'application/json'}});
-  if(!response.ok){const result=await response.json().catch(()=>({}));const message=result?.errors?.map(e=>e.message).join(', ');throw new Error(message||'Your request could not be sent.');}
-  estimateForm.reset(); formStatus.textContent='Your estimate request was sent successfully.'; formStatus.className='form-status success'; openSuccessModal();
- }catch(error){formStatus.textContent='Something went wrong. Please try again or call (941) 404-9777.'; formStatus.className='form-status error';}
- finally{submitButton.disabled=false;submitButton.classList.remove('is-sending');submitButton.textContent=originalText;}
-});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});qsa('.reveal').forEach(el=>observer.observe(el));
+qs('#year').textContent=new Date().getFullYear();

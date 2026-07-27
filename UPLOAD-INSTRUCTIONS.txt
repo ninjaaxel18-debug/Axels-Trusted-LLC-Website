@@ -1,7 +1,17 @@
+AXELS TRUSTED WEBSITE V4 — UPLOAD INSTRUCTIONS
+
 1. Unzip this package.
-2. Replace the existing website files in your GitHub folder with these files.
-3. Keep the hidden .git folder.
-4. Keep CNAME; it points the site to axelstrusted.com.
-5. Commit the changes in GitHub Desktop and click Push origin.
-6. Submit one test estimate from the live website.
-7. Check axelsllc22@gmail.com and confirm the Formspree verification email if Formspree asks.
+2. Open your current GitHub website folder on your computer.
+3. Keep the hidden .git folder. Do not delete it.
+4. Replace the existing website files with all files and the images folder from this package.
+5. Keep CNAME. It connects GitHub Pages to axelstrusted.com.
+6. In GitHub Desktop, enter a summary such as “Website V4 redesign”.
+7. Click Commit to main, then Push origin.
+8. Wait 1–3 minutes and open https://axelstrusted.com.
+9. Press Ctrl+F5 to force-refresh the website.
+10. Submit one test estimate. Formspree may ask you to confirm the form by email.
+
+Contact details retained:
+Phone: (941) 404-9777
+Email: axelsllc22@gmail.com
+Formspree ID: mqerwokn
