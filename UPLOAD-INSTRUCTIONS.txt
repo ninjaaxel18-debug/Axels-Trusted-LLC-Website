@@ -1,0 +1,3 @@
+Replace the files in your GitHub website folder with all files from this folder.
+Then commit the changes and click Push origin in GitHub Desktop.
+The original photos were used without AI alteration.
