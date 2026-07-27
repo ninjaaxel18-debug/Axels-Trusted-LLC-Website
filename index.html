@@ -28,144 +28,72 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="home">
-    <div class="header-inner">
-      <a class="brand" href="#home" aria-label="Axels Trusted LLC home">
-        <img src="images/logo.png" alt="Axels Trusted LLC logo" width="88" height="86">
-      </a>
-
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#estimate">Contact</a>
-      </nav>
-
-      <div class="header-contact">
-        <a href="tel:+19414049777"><span aria-hidden="true">☎</span><strong>(941) 404-9777</strong></a>
-        <a href="mailto:axelsllc22@gmail.com"><span aria-hidden="true">✉</span><small>axelsllc22@gmail.com</small></a>
-      </div>
-    </div>
-  </header>
-
   <main id="main">
-    <section class="hero" aria-label="Axels Trusted home remodeling">
-      <div class="hero-copy">
-        <p class="eyebrow">Transform your home with</p>
-        <h1>Craftsmanship<br>You Can Trust</h1>
-        <p class="hero-services">Kitchens <i>•</i> Bathrooms <i>•</i> Flooring<br>Painting <i>•</i> Carpentry <i>•</i> Handyman Services</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#estimate"><span aria-hidden="true">▣</span> Get Free Estimate</a>
-          <a class="button button-secondary" href="#projects"><span aria-hidden="true">▧</span> View Our Work</a>
+    <section class="image-home" id="home" aria-label="Axels Trusted LLC interactive homepage">
+      <div class="image-home-canvas">
+        <picture>
+          <source srcset="images/homepage-interactive.jpg 1650w, images/homepage-interactive@2x.jpg 3300w" sizes="100vw">
+          <img src="images/homepage-interactive@2x.jpg" alt="Axels Trusted LLC remodeling homepage with services, project comparisons, process, phone number, and estimate buttons" width="3300" height="1856" fetchpriority="high">
+        </picture>
+
+        <nav class="image-hotspots" aria-label="Homepage navigation and actions">
+          <a class="hotspot hs-home" href="#home" aria-label="Home"></a>
+          <a class="hotspot hs-services" href="#services-real" aria-label="Services"></a>
+          <a class="hotspot hs-projects" href="#real-project" aria-label="Projects"></a>
+          <a class="hotspot hs-about" href="#about" aria-label="About"></a>
+          <a class="hotspot hs-areas" href="#service-areas" aria-label="Service areas"></a>
+          <a class="hotspot hs-contact" href="#estimate" aria-label="Contact"></a>
+          <a class="hotspot hs-phone-top" href="tel:+19414049777" aria-label="Call (941) 404-9777"></a>
+          <a class="hotspot hs-email-top" href="mailto:axelsllc22@gmail.com" aria-label="Email Axels Trusted LLC"></a>
+          <a class="hotspot hs-estimate-top" href="#estimate" aria-label="Get a free estimate"></a>
+          <a class="hotspot hs-work-top" href="#real-project" aria-label="View our work"></a>
+          <a class="hotspot hs-service-kitchen" href="#estimate" data-service="Kitchen Remodeling" aria-label="Kitchen remodeling"></a>
+          <a class="hotspot hs-service-bath" href="#estimate" data-service="Bathroom Remodeling" aria-label="Bathroom remodeling"></a>
+          <a class="hotspot hs-service-floor" href="#estimate" data-service="Flooring Installation" aria-label="Flooring installation"></a>
+          <a class="hotspot hs-service-paint" href="#estimate" data-service="Interior & Exterior Painting" aria-label="Interior and exterior painting"></a>
+          <a class="hotspot hs-service-carpentry" href="#estimate" data-service="Custom Carpentry" aria-label="Custom carpentry"></a>
+          <a class="hotspot hs-service-handyman" href="#estimate" data-service="Handyman Services" aria-label="Handyman services"></a>
+          <a class="hotspot hs-view-services" href="#services-real" aria-label="View all services"></a>
+          <a class="hotspot hs-view-projects" href="#real-project" aria-label="View more projects"></a>
+          <a class="hotspot hs-phone-bottom" href="tel:+19414049777" aria-label="Call (941) 404-9777"></a>
+        </nav>
+
+        <div class="image-slider image-slider-kitchen compare" data-compare>
+          <img class="compare-after" src="images/kitchen-after.jpg" alt="Kitchen after design inspiration">
+          <div class="compare-before-wrap"><img class="compare-before" src="images/kitchen-before.jpg" alt="Kitchen before design inspiration"></div>
+          <div class="compare-divider"><span>↔</span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare kitchen before and after">
+        </div>
+        <div class="image-slider image-slider-bath compare" data-compare>
+          <img class="compare-after" src="images/bath-after.jpg" alt="Bathroom after design inspiration">
+          <div class="compare-before-wrap"><img class="compare-before" src="images/bath-before.jpg" alt="Bathroom before design inspiration"></div>
+          <div class="compare-divider"><span>↔</span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare bathroom before and after">
+        </div>
+        <div class="image-slider image-slider-floor compare" data-compare>
+          <img class="compare-after" src="images/floor-after.jpg" alt="Flooring after design inspiration">
+          <div class="compare-before-wrap"><img class="compare-before" src="images/floor-before.jpg" alt="Flooring before design inspiration"></div>
+          <div class="compare-divider"><span>↔</span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare flooring before and after">
         </div>
       </div>
-
-      <picture class="hero-art">
-        <source srcset="images/hero-art.webp" type="image/webp">
-        <img src="images/hero-art.jpg" alt="Illustrated contractor standing in a modern remodeled kitchen" width="2194" height="750" fetchpriority="high">
-      </picture>
+      <div class="image-home-mobile-actions" aria-label="Quick actions">
+        <a href="tel:+19414049777">Call Now</a>
+        <a href="#estimate">Free Estimate</a>
+        <a href="#real-project">View Projects</a>
+      </div>
     </section>
 
-    <section class="trust-bar" aria-label="Why choose Axels Trusted">
-      <div class="trust-item"><b>$</b><span><strong>Free Estimates</strong><small>No pressure, honest answers</small></span></div>
-      <div class="trust-item"><b>◎</b><span><strong>Owner Operated</strong><small>Direct attention on every job</small></span></div>
-      <div class="trust-item"><b>◷</b><span><strong>Fast Response</strong><small>We respect your time</small></span></div>
-      <div class="trust-item"><b>◇</b><span><strong>Quality Craftsmanship</strong><small>Built to last, done right</small></span></div>
-    </section>
-
-    <section class="showcase" id="services">
-      <div class="services-panel">
-        <p class="section-kicker">Our services</p>
-        <h2>What We Do</h2>
-        <div class="service-card-grid">
-          <a class="service-tile" href="#estimate" data-service="Kitchen Remodeling">
-            <img src="images/real-kitchen.jpg" alt="Kitchen remodeling project" loading="lazy" decoding="async">
-            <span>Kitchen Remodeling</span>
-          </a>
-          <a class="service-tile" href="#estimate" data-service="Bathroom Remodeling">
-            <img src="images/real-bathroom.jpg" alt="Bathroom remodeling project" loading="lazy" decoding="async">
-            <span>Bathroom Remodeling</span>
-          </a>
-          <a class="service-tile" href="#estimate" data-service="Flooring Installation">
-            <img src="images/real-flooring.jpg" alt="Flooring installation project" loading="lazy" decoding="async">
-            <span>Flooring Installation</span>
-          </a>
-          <a class="service-tile" href="#estimate" data-service="Interior & Exterior Painting">
-            <img src="images/painting-project.jpg" alt="Interior painting project" loading="lazy" decoding="async">
-            <span>Interior & Exterior Painting</span>
-          </a>
-          <a class="service-tile" href="#estimate" data-service="Custom Carpentry">
-            <img src="images/real-carpentry.jpg" alt="Custom carpentry project" loading="lazy" decoding="async">
-            <span>Custom Carpentry</span>
-          </a>
-          <a class="service-tile" href="#estimate" data-service="Handyman Services">
-            <img src="images/real-interior.jpg" alt="Home improvement project" loading="lazy" decoding="async">
-            <span>Handyman Services</span>
-          </a>
-        </div>
-        <a class="mini-button" href="#estimate">Discuss Your Project</a>
-      </div>
-
-      <div class="transform-panel" id="projects">
-        <p class="section-kicker">See the difference</p>
-        <h2>Before & After Transformations</h2>
-        <p class="panel-intro">Drag each handle to compare. Concept examples are clearly marked; real project photos appear below.</p>
-
-        <div class="mini-slider-grid">
-          <article class="mini-project">
-            <div class="compare" data-compare>
-              <img class="compare-after" src="images/kitchen-after.jpg" alt="Updated white kitchen design inspiration" loading="lazy">
-              <div class="compare-before-wrap"><img class="compare-before" src="images/kitchen-before.jpg" alt="Dark kitchen before design inspiration" loading="lazy"></div>
-              <span class="compare-label before-label">Before</span><span class="compare-label after-label">After</span>
-              <div class="compare-divider"><span>↔</span></div>
-              <input type="range" min="0" max="100" value="50" aria-label="Compare kitchen before and after design inspiration">
-            </div>
-            <h3>Kitchen Remodel</h3>
-            <small>Design inspiration</small>
-          </article>
-
-          <article class="mini-project">
-            <div class="compare" data-compare>
-              <img class="compare-after" src="images/bath-after.jpg" alt="Bright bathroom after design inspiration" loading="lazy">
-              <div class="compare-before-wrap"><img class="compare-before" src="images/bath-before.jpg" alt="Bathroom before design inspiration" loading="lazy"></div>
-              <span class="compare-label before-label">Before</span><span class="compare-label after-label">After</span>
-              <div class="compare-divider"><span>↔</span></div>
-              <input type="range" min="0" max="100" value="50" aria-label="Compare bathroom before and after design inspiration">
-            </div>
-            <h3>Bathroom Remodel</h3>
-            <small>Design inspiration</small>
-          </article>
-
-          <article class="mini-project">
-            <div class="compare" data-compare>
-              <img class="compare-after" src="images/floor-after.jpg" alt="Finished flooring design inspiration" loading="lazy">
-              <div class="compare-before-wrap"><img class="compare-before" src="images/floor-before.jpg" alt="Room before flooring design inspiration" loading="lazy"></div>
-              <span class="compare-label before-label">Before</span><span class="compare-label after-label">After</span>
-              <div class="compare-divider"><span>↔</span></div>
-              <input type="range" min="0" max="100" value="50" aria-label="Compare flooring before and after design inspiration">
-            </div>
-            <h3>Flooring Installation</h3>
-            <small>Design inspiration</small>
-          </article>
-        </div>
-        <a class="mini-button" href="#real-project">View Real Project</a>
-      </div>
-
-      <div class="process-panel">
-        <p class="section-kicker">Our process</p>
-        <h2>A Simple, Clear Process</h2>
-        <ol class="process-list">
-          <li><b>1</b><span><strong>Contact Us</strong><small>Tell us about your project and request a free estimate.</small></span></li>
-          <li><b>2</b><span><strong>On-Site Visit</strong><small>We inspect the space and discuss your goals.</small></span></li>
-          <li><b>3</b><span><strong>Detailed Quote</strong><small>You receive pricing based on the actual scope.</small></span></li>
-          <li><b>4</b><span><strong>Project Begins</strong><small>We complete the work with quality and care.</small></span></li>
-          <li><b>5</b><span><strong>Final Walkthrough</strong><small>We review the finished project with you.</small></span></li>
-        </ol>
+    <section class="real-services" id="services-real" aria-label="Services">
+      <p class="section-kicker">Our services</p>
+      <h2>Remodeling and Home Improvement</h2>
+      <div class="real-services-grid">
+        <a href="#estimate" data-service="Kitchen Remodeling">Kitchen Remodeling</a>
+        <a href="#estimate" data-service="Bathroom Remodeling">Bathroom Remodeling</a>
+        <a href="#estimate" data-service="Flooring Installation">Flooring Installation</a>
+        <a href="#estimate" data-service="Interior & Exterior Painting">Painting</a>
+        <a href="#estimate" data-service="Custom Carpentry">Custom Carpentry</a>
+        <a href="#estimate" data-service="Handyman Services">Handyman Services</a>
       </div>
     </section>
 

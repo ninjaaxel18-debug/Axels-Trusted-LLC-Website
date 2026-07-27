@@ -182,3 +182,25 @@ section[id]{scroll-margin-top:92px}
   .mobile-contact-bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:5000;background:#080c11;border-top:1px solid #ff6a13}.mobile-contact-bar a{color:#fff;text-align:center;padding:15px 4px;text-transform:uppercase;font-weight:900;font-size:.78rem;border-right:1px solid rgba(255,255,255,.18)}.mobile-contact-bar a:last-child{background:var(--orange);border:0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.service-tile,.gallery-card img{transition:none}}
+
+
+/* V7 full interactive homepage image */
+.site-header,.hero,.trust-bar,.showcase{display:none!important}
+.image-home{background:#fff}
+.image-home-canvas{position:relative;width:100%;max-width:1920px;margin:0 auto;overflow:hidden;background:#fff;aspect-ratio:1650/928}
+.image-home-canvas>picture,.image-home-canvas>picture img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain}
+.image-hotspots{position:absolute;inset:0;z-index:20;pointer-events:none}
+.hotspot{position:absolute;display:block;pointer-events:auto;border-radius:8px}
+.hotspot:hover,.hotspot:focus-visible{outline:3px solid rgba(244,92,5,.9);background:rgba(244,92,5,.08)}
+.hs-home{left:25.2%;top:1.5%;width:4.5%;height:5%}.hs-services{left:30.8%;top:1.5%;width:7%;height:5%}.hs-projects{left:38.4%;top:1.5%;width:5.2%;height:5%}.hs-about{left:44.7%;top:1.5%;width:4.6%;height:5%}.hs-areas{left:50.4%;top:1.5%;width:8%;height:5%}.hs-contact{left:59.2%;top:1.5%;width:6%;height:5%}
+.hs-phone-top{left:85.3%;top:1%;width:12.7%;height:4.2%}.hs-email-top{left:85.5%;top:5%;width:12.5%;height:3.8%}
+.hs-estimate-top{left:3.2%;top:40.8%;width:14.2%;height:5.5%}.hs-work-top{left:18.1%;top:40.8%;width:13.5%;height:5.5%}
+.hs-service-kitchen{left:3%;top:57.1%;width:9%;height:12.2%}.hs-service-bath{left:12.5%;top:57.1%;width:9%;height:12.2%}.hs-service-floor{left:22%;top:57.1%;width:9%;height:12.2%}.hs-service-paint{left:3%;top:70%;width:9%;height:12%}.hs-service-carpentry{left:12.5%;top:70%;width:9%;height:12%}.hs-service-handyman{left:22%;top:70%;width:9%;height:12%}
+.hs-view-services{left:9.8%;top:82.2%;width:10%;height:3.6%}.hs-view-projects{left:45.3%;top:82.2%;width:13.2%;height:3.6%}.hs-phone-bottom{left:41.5%;top:91.2%;width:19.3%;height:6.2%}
+.image-slider{position:absolute;z-index:12;border-radius:9px;overflow:hidden;background:#ddd;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.image-slider-kitchen{left:34%;top:59.2%;width:13.3%;height:18.3%}.image-slider-bath{left:47.5%;top:59.2%;width:13.3%;height:18.3%}.image-slider-floor{left:61.8%;top:59.2%;width:13.3%;height:18.3%}
+.image-slider .compare-label{display:none}.image-slider .compare-divider span{width:31px;height:31px;font-size:.85rem;border-width:2px}.image-slider input{z-index:8}
+.image-home-mobile-actions{display:none}
+.real-services{text-align:center;padding:48px 24px;background:#fff}.real-services h2{font-size:clamp(2rem,4vw,3.5rem);margin:5px 0 25px}.real-services-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;max-width:1320px;margin:auto}.real-services-grid a{padding:18px 10px;border:1px solid #ddd;border-radius:10px;font-weight:900;background:#fff;transition:.2s}.real-services-grid a:hover{border-color:var(--orange);transform:translateY(-2px)}
+@media(max-width:900px){.image-slider{display:none}.image-home-canvas{aspect-ratio:1650/928}.image-home-mobile-actions{display:grid;grid-template-columns:repeat(3,1fr);background:#090c10}.image-home-mobile-actions a{text-align:center;padding:15px 5px;color:#fff;font-weight:900;border-right:1px solid rgba(255,255,255,.18)}.image-home-mobile-actions a:nth-child(2){background:var(--orange)}.image-home-mobile-actions a:last-child{border-right:0}.real-services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.image-home-canvas{overflow-x:auto;aspect-ratio:auto;height:auto}.image-home-canvas>picture{position:relative;display:block;width:980px;height:auto}.image-home-canvas>picture img{position:relative;width:980px;height:auto;object-fit:contain}.image-hotspots{width:980px;height:551px}.image-slider{display:none}.real-services{padding:36px 15px}.real-services-grid{grid-template-columns:1fr 1fr}.real-services-grid a{font-size:.86rem;padding:15px 7px}}
