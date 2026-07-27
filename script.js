@@ -34,3 +34,5 @@ ${data.get('details')}`
   // Replace this sample email with your real business email.
   window.location.href = `mailto:info@axelstrusted.com?subject=${subject}&body=${body}`;
 });
+
+const lightbox=document.getElementById('lightbox');const lightboxImage=document.getElementById('lightboxImage');const lightboxClose=document.querySelector('.lightbox-close');document.querySelectorAll('.gallery-open').forEach(button=>button.addEventListener('click',()=>{lightboxImage.src=button.dataset.image;lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}));function closeLightbox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImage.src='';document.body.style.overflow='';}lightboxClose?.addEventListener('click',closeLightbox);lightbox?.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
