@@ -60,7 +60,8 @@
   <div class="compare" id="compare">
     <img src="images/bedroom-after.jpg" alt="Bedroom after renovation">
     <div class="before"><img src="images/bedroom-before.jpg" alt="Bedroom before renovation"></div>
-    <input aria-label="Before and after comparison" type="range" min="0" max="100" value="50">
+    <div class="slider-line" aria-hidden="true"><div class="slider-grabber"><span>↔</span></div></div>
+    <input aria-label="Drag to compare before and after" type="range" min="0" max="100" value="50">
     <div class="labels"><span>Before</span><span>After</span></div>
   </div>
 </section>
@@ -84,7 +85,7 @@
     </div></section>
     <section class="form-step" data-step="2"><h3>Where is the project?</h3><label class="field">ZIP code<input name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="34287" required></label></section>
     <section class="form-step" data-step="3"><h3>Tell us a little about it</h3><label class="field">Project details<textarea name="message" rows="5" placeholder="What would you like completed?" required></textarea></label></section>
-    <section class="form-step" data-step="4"><h3>How should we contact you?</h3><div class="field-row"><label class="field">Name<input name="name" autocomplete="name" required></label><label class="field">Phone<input name="phone" type="tel" autocomplete="tel" required></label></div><label class="field">Email <small>(optional)</small><input name="email" type="email" autocomplete="email"></label><label class="consent"><input type="checkbox" required> I agree to be contacted about this estimate request.</label></section>
+    <section class="form-step" data-step="4"><h3>How should we contact you?</h3><div class="field-row"><label class="field">Name<input name="name" autocomplete="name" required></label><label class="field">Phone<input id="phoneInput" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(941) 555-1234" required><small class="field-help" id="phoneHelp">Please include all 10 digits, including the area code.</small></label></div><label class="field">Email <small>(optional)</small><input id="emailInput" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com"><small class="field-help" id="emailHelp">Example: name@example.com</small></label><label class="consent"><input type="checkbox" required> I agree to be contacted about this estimate request.</label></section>
     <div class="form-actions"><button type="button" class="btn back" id="backBtn">Back</button><button type="button" class="btn primary" id="nextBtn">Next</button><button type="submit" class="btn primary" id="submitBtn">Request Free Estimate</button></div>
     <p class="form-note">Your information is only used to respond to your project request.</p>
     <div class="success" id="success"><div>✓</div><h3>Estimate request sent!</h3><p>Thank you. We’ll be in touch as soon as possible.</p><a href="tel:+19414049777">Call (941) 404-9777</a></div>
