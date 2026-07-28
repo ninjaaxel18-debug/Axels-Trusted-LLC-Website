@@ -33,3 +33,30 @@
 .form-alert{display:none;border-radius:8px;padding:12px 14px;margin:14px 0 0;background:#fff1f0;color:#9f1c15;border:1px solid #f2b8b5;font-weight:700}
 .form-alert.show{display:block}
 @media(max-width:560px){.slider-grabber{width:50px;height:50px;font-size:21px}.compare{border-width:4px}}
+
+
+/* V6.3 richer color and city selector */
+.hero-content{border-left:5px solid var(--orange);margin-left:7vw;padding-left:38px}
+.hero-content:before{content:'LOCAL • RELIABLE • CRAFTED WITH CARE';display:inline-block;margin-bottom:20px;padding:7px 12px;border-radius:999px;background:rgba(242,106,33,.2);border:1px solid rgba(255,147,79,.55);color:#ffd0b5;font-size:11px;font-weight:900;letter-spacing:.12em}
+.section-heading h2:after,.about h2:after,.estimate-intro h2:after{content:'';display:block;width:72px;height:5px;border-radius:10px;background:var(--orange);margin-top:20px}
+.section-heading:not(.left) h2:after{margin-left:auto;margin-right:auto}
+.service-grid article:nth-child(2),.service-grid article:nth-child(5){background:linear-gradient(145deg,#fff 55%,var(--orange-soft))}
+.service-grid article:nth-child(3),.service-grid article:nth-child(6){background:linear-gradient(145deg,#fff 55%,#fff8df)}
+.gallery figure{border-radius:10px;box-shadow:0 8px 24px rgba(40,20,5,.1);border-bottom:5px solid var(--orange)}
+.gallery figcaption{padding-bottom:20px}
+.work-section:before{content:'';display:block;height:10px;width:110px;background:linear-gradient(90deg,var(--orange),#ffb26f);border-radius:10px;margin-bottom:42px}
+.about{border-top:10px solid var(--orange)}
+.about-points b{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;border-radius:50%;background:var(--orange);color:#fff}
+.estimate-intro{padding:28px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.035)}
+footer{border-top:7px solid var(--orange);background:linear-gradient(90deg,#080808,#18100c)}
+.step-help{margin:-14px 0 20px;color:var(--muted)}
+.city-choices{grid-template-columns:repeat(2,1fr)}
+.city-choices span{position:relative;padding-left:42px;background:#fff}
+.city-choices span:before{content:'📍';position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:17px}
+.city-choices input:checked+span{background:linear-gradient(135deg,#fff5ef,#ffe5d4);box-shadow:0 6px 16px rgba(242,106,33,.13)}
+.other-city-choice{grid-column:1/-1}
+.other-city-field{display:none;margin-top:18px;padding:18px;border-radius:10px;background:var(--orange-soft);border:1px solid #f5c3a7}
+.other-city-field.visible{display:flex}
+.form-card .form-step h3{color:#2a160c}
+@media(max-width:900px){.hero-content{margin-left:0;border-left:4px solid var(--orange);padding-left:24px}.work-section:before{margin-bottom:28px}}
+@media(max-width:560px){.city-choices{grid-template-columns:1fr}.other-city-choice{grid-column:auto}.hero-content:before{font-size:9px;letter-spacing:.08em}.section-heading h2:after,.about h2:after,.estimate-intro h2:after{width:56px}}

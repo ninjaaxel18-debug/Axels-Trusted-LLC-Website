@@ -30,6 +30,21 @@ const phoneHelp=document.getElementById('phoneHelp');
 const emailHelp=document.getElementById('emailHelp');
 let current=0;
 
+const cityRadios=[...document.querySelectorAll('input[name="city"]')];
+const otherCityRadio=document.getElementById('otherCityRadio');
+const otherCityField=document.getElementById('otherCityField');
+const otherCityInput=document.getElementById('otherCityInput');
+function updateOtherCity(){
+  const show=otherCityRadio?.checked;
+  otherCityField?.classList.toggle('visible',!!show);
+  if(otherCityInput){
+    otherCityInput.required=!!show;
+    if(!show){otherCityInput.value='';otherCityInput.setCustomValidity('');}
+  }
+}
+cityRadios.forEach(r=>r.addEventListener('change',updateOtherCity));
+updateOtherCity();
+
 const alertBox=document.createElement('div');
 alertBox.className='form-alert';
 alertBox.setAttribute('role','alert');
@@ -104,6 +119,20 @@ function valid(){
     alertBox.textContent='Please choose a service before continuing.';
     alertBox.classList.add('show');
     return false;
+  }
+  if(current===1){
+    const selectedCity=document.querySelector('input[name="city"]:checked');
+    if(!selectedCity){
+      alertBox.textContent='Please choose the city where the project is located.';
+      alertBox.classList.add('show');
+      return false;
+    }
+    if(selectedCity.value==='Other'&&!otherCityInput.value.trim()){
+      alertBox.textContent='Please type the city where the project is located.';
+      alertBox.classList.add('show');
+      otherCityInput.focus();
+      return false;
+    }
   }
   if(current===3){
     const phoneOK=validatePhone(true);

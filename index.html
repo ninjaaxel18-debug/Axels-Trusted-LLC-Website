@@ -83,7 +83,15 @@
       <label><input type="radio" name="service" value="Carpentry"><span>Carpentry</span></label>
       <label><input type="radio" name="service" value="Handyman / Other"><span>Handyman / Other</span></label>
     </div></section>
-    <section class="form-step" data-step="2"><h3>Where is the project?</h3><label class="field">ZIP code<input name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="34287" required></label></section>
+    <section class="form-step location-step" data-step="2"><h3>What city is the project in?</h3><p class="step-help">Choose your area so we can quickly confirm service availability.</p><div class="choices city-choices">
+      <label><input type="radio" name="city" value="North Port" required><span>North Port</span></label>
+      <label><input type="radio" name="city" value="Venice"><span>Venice</span></label>
+      <label><input type="radio" name="city" value="Port Charlotte"><span>Port Charlotte</span></label>
+      <label><input type="radio" name="city" value="Englewood"><span>Englewood</span></label>
+      <label><input type="radio" name="city" value="Sarasota"><span>Sarasota</span></label>
+      <label><input type="radio" name="city" value="Punta Gorda"><span>Punta Gorda</span></label>
+      <label class="other-city-choice"><input id="otherCityRadio" type="radio" name="city" value="Other"><span>Other nearby area</span></label>
+    </div><label class="field other-city-field" id="otherCityField">Type your city<input id="otherCityInput" name="other_city" autocomplete="address-level2" placeholder="Enter your city"></label></section>
     <section class="form-step" data-step="3"><h3>Tell us a little about it</h3><label class="field">Project details<textarea name="message" rows="5" placeholder="What would you like completed?" required></textarea></label></section>
     <section class="form-step" data-step="4"><h3>How should we contact you?</h3><div class="field-row"><label class="field">Name<input name="name" autocomplete="name" required></label><label class="field">Phone<input id="phoneInput" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(941) 555-1234" required><small class="field-help" id="phoneHelp">Please include all 10 digits, including the area code.</small></label></div><label class="field">Email <small>(optional)</small><input id="emailInput" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com"><small class="field-help" id="emailHelp">Example: name@example.com</small></label><label class="consent"><input type="checkbox" required> I agree to be contacted about this estimate request.</label></section>
     <div class="form-actions"><button type="button" class="btn back" id="backBtn">Back</button><button type="button" class="btn primary" id="nextBtn">Next</button><button type="submit" class="btn primary" id="submitBtn">Request Free Estimate</button></div>
