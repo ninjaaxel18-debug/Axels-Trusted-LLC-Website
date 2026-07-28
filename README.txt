@@ -1,13 +1,8 @@
-AXELS TRUSTED LLC — V6 LEAD FLOW
+AXELS TRUSTED LLC — V6 NO CHARACTER
 
-This version includes:
-- Character + modern kitchen hero
-- Real project photos
-- Four-step, mobile-friendly estimate form
-- Formspree AJAX submission to form ID mqerwokn
-- Contact consent checkbox
-- Progress bar and validation
-- Success confirmation popup
-- Existing CNAME for axelstrusted.com
+This version removes the illustrated character and uses a real kitchen project as the hero.
+It includes a 4-step Formspree estimate form, real project gallery, before/after slider,
+mobile call/text buttons, and the CNAME file for axelstrusted.com.
 
-Future abandoned-form tracking is not active in this static version. The form is structured so a CRM or analytics platform can be connected later without redesigning the page.
+Upload every file and folder in this package to the root of your GitHub Pages repository.
+Do not delete CNAME.
