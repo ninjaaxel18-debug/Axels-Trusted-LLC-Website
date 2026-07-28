@@ -27,7 +27,7 @@
 /* Form validation feedback */
 .field-help{font-weight:600;color:#777;font-size:12px;margin-top:-2px}
 .field input.is-invalid,.field textarea.is-invalid{border-color:#c62828;background:#fff6f6;box-shadow:0 0 0 3px rgba(198,40,40,.1)}
-.field input.is-valid{border-color:#27863f;background:#f4fff7}
+.field input.is-valid,.field textarea.is-valid{border-color:#27863f;background:#f4fff7}
 .field-help.error{color:#b42318}
 .field-help.success{color:#25753a}
 .form-alert{display:none;border-radius:8px;padding:12px 14px;margin:14px 0 0;background:#fff1f0;color:#9f1c15;border:1px solid #f2b8b5;font-weight:700}
