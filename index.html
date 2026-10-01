@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YHCWXWHT61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YHCWXWHT61');
-</script>
 <meta name="google-site-verification" content="f1VU6o5qvRijaelsxvOmMMWU1-Njx1AepR5kY4Y2hSY">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kitchen &amp; Bathroom Remodeling in North Port | Axel's Trusted LLC</title>
@@ -20,7 +12,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "@id": "https://axelstrusted.com/#business", "name": "Axel's Trusted LLC", "url": "https://axelstrusted.com/", "telephone": "+1-941-404-9777", "email": "estimates@axelstrusted.com", "areaServed": [{"@type": "City", "name": "North Port"}, {"@type": "City", "name": "Venice"}, {"@type": "City", "name": "Port Charlotte"}, {"@type": "City", "name": "Punta Gorda"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "19:00"}]}</script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
 <header class="site-header">
   <a class="brand" href="#top"><img src="images/logo.png" alt="Axels Trusted LLC" width="400" height="400" decoding="async"><span>Axels Trusted LLC</span></a>
   <button class="menu" aria-label="Open menu">☰</button>
@@ -31,12 +23,44 @@
 <main id="top">
 <section class="hero">
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="eyebrow">North Port • Venice • Port Charlotte</p>
-    <h1>Kitchen &amp; Bathroom Remodeling<br>in North Port, FL</h1>
-    <p class="hero-copy">Kitchen and bathroom remodeling, drywall and texture repair, and tile installation from a local owner-operated company. Serving North Port, Venice, Port Charlotte and Punta Gorda.</p>
-    <div class="hero-actions"><a class="btn primary" href="#estimate">Get a Free Estimate</a><a class="btn secondary" href="tel:+19414049777">Call Now</a></div>
-    <div class="hero-proof"><span>✓ Free estimates</span><span>✓ Owner operated</span><span>✓ Local service</span></div>
+  <div class="hero-shell">
+    <div class="hero-content">
+      <p class="eyebrow">North Port • Venice • Port Charlotte</p>
+      <h1>Kitchen &amp; Bathroom Remodeling<br>in North Port, FL</h1>
+      <p class="hero-copy">Kitchen and bathroom remodeling, drywall and texture repair, and tile installation from a local owner-operated company. Serving North Port, Venice, Port Charlotte and Punta Gorda.</p>
+      <div class="hero-actions"><a class="btn primary" href="#estimate">Start Your Estimate</a><a class="btn secondary" href="tel:+19414049777">Call Now</a></div>
+      <div class="hero-proof"><span>✓ Free estimates</span><span>✓ Owner operated</span><span>✓ Local service</span></div>
+    </div>
+    <section id="estimate" class="estimate-section estimate-top">
+      <div class="estimate-intro"><p class="eyebrow">Free estimate</p><h2>Tell us about your project</h2><p>Answer a few quick questions. Most requests take under a minute.</p><ul><li>No obligation</li><li>Fast local response</li></ul></div>
+      <form id="leadForm" action="https://formspree.io/f/mqerwokn" method="POST" class="form-card">
+        <div class="progress"><span id="progressBar"></span></div><p class="step-label" id="stepLabel">Step 1 of 4</p>
+        <section class="form-step active" data-step="1"><h3>What can we help with?</h3><div class="choices">
+          <label><input type="radio" name="service" value="Kitchen Remodeling" required><span>Kitchen Remodeling</span></label>
+          <label><input type="radio" name="service" value="Bathroom Remodeling"><span>Bathroom Remodeling</span></label>
+          <label><input type="radio" name="service" value="Drywall / Texture Repair"><span>Drywall / Texture Repair</span></label>
+      <label><input type="radio" name="service" value="Tile Installation"><span>Tile Installation</span></label>
+      <label><input type="radio" name="service" value="Flooring"><span>Flooring</span></label>
+          <label><input type="radio" name="service" value="Painting"><span>Painting</span></label>
+          <label><input type="radio" name="service" value="Carpentry"><span>Carpentry</span></label>
+          <label><input type="radio" name="service" value="Handyman / Other"><span>Handyman / Other</span></label>
+        </div></section>
+        <section class="form-step location-step" data-step="2"><h3>What city is the project in?</h3><p class="step-help">Choose your area so we can quickly confirm service availability.</p><div class="choices city-choices">
+          <label><input type="radio" name="city" value="North Port" required><span>North Port</span></label>
+          <label><input type="radio" name="city" value="Venice"><span>Venice</span></label>
+          <label><input type="radio" name="city" value="Port Charlotte"><span>Port Charlotte</span></label>
+          <label><input type="radio" name="city" value="Englewood"><span>Englewood</span></label>
+          <label><input type="radio" name="city" value="Sarasota"><span>Sarasota</span></label>
+          <label><input type="radio" name="city" value="Punta Gorda"><span>Punta Gorda</span></label>
+          <label class="other-city-choice"><input id="otherCityRadio" type="radio" name="city" value="Other"><span>Other nearby area</span></label>
+        </div><label class="field other-city-field" id="otherCityField">Type your city<input id="otherCityInput" name="other_city" autocomplete="address-level2" placeholder="Enter your city"></label></section>
+        <section class="form-step" data-step="3"><h3>Tell us a little about it</h3><label class="field">Project details<textarea id="projectDetails" name="message" rows="5" minlength="10" placeholder="What would you like completed?" required></textarea><small class="field-help" id="projectHelp">Please include at least a short sentence about the work.</small></label></section>
+        <section class="form-step" data-step="4"><h3>How should we contact you?</h3><div class="field-row"><label class="field">Name<input id="nameInput" name="name" autocomplete="name" minlength="2" required><small class="field-help" id="nameHelp">Enter your name using letters.</small></label><label class="field">Phone<input id="phoneInput" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-\s]{10,14}" placeholder="(941) 555-1234" required><small class="field-help" id="phoneHelp">Please include all 10 digits, including the area code.</small></label></div><label class="field">Email <small>(optional)</small><input id="emailInput" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com"><small class="field-help" id="emailHelp">Example: name@example.com</small></label><label class="consent"><input id="consentInput" type="checkbox" required> I agree to be contacted about this estimate request.</label></section>
+        <div class="form-actions"><button type="button" class="btn back" id="backBtn">Back</button><button type="button" class="btn primary" id="nextBtn">Next</button><button type="submit" class="btn primary" id="submitBtn">Request Free Estimate</button></div>
+        <p class="form-note">Your information is only used to respond to your project request.</p>
+        <div class="success" id="success"><div>✓</div><h3>Estimate request sent!</h3><p>Thank you. We’ll be in touch as soon as possible.</p><a href="tel:+19414049777">Call (941) 404-9777</a></div>
+      </form>
+    </section>
   </div>
 </section>
 
@@ -70,10 +94,10 @@
 </section>
 
 <section class="section transformation">
-  <div class="section-heading left"><p class="eyebrow dark">Before & after</p><h2>See the difference</h2></div>
+  <div class="section-heading left"><p class="eyebrow dark">Before & after</p><h2>Painting transformation</h2><p>The full room stays in view so you can compare the finished result.</p></div>
   <div class="compare" id="compare">
-    <img src="images/bedroom-after.jpg" alt="Bedroom after renovation" width="1152" height="1536" decoding="async" loading="lazy">
-    <div class="before"><img src="images/bedroom-before.jpg" alt="Bedroom before renovation" width="1152" height="1536" decoding="async" loading="lazy"></div>
+    <img src="images/bedroom-after.jpg" alt="Room after painting" width="1152" height="1536" decoding="async" loading="lazy">
+    <div class="before"><img src="images/bedroom-before.jpg" alt="Room before painting" width="1152" height="1536" decoding="async" loading="lazy"></div>
     <div class="slider-line" aria-hidden="true"><div class="slider-grabber"><span>↔</span></div></div>
     <input aria-label="Drag to compare before and after" type="range" min="0" max="100" value="50">
     <div class="labels"><span>Before</span><span>After</span></div>
@@ -85,36 +109,6 @@
   <div class="about-points"><div><b>01</b><span><strong>Direct communication</strong>Deal with the owner—not a call center.</span></div><div><b>02</b><span><strong>Flexible project scope</strong>From repairs to larger remodeling work.</span></div><div><b>03</b><span><strong>Respect for your home</strong>Clean, careful and professional service.</span></div></div>
 </section>
 
-<section id="estimate" class="estimate-section">
-  <div class="estimate-intro"><p class="eyebrow">Free estimate</p><h2>Tell us about your project</h2><p>Answer a few quick questions. Most requests can be completed in under a minute.</p><ul><li>No obligation</li><li>No spam</li><li>Fast local response</li></ul></div>
-  <form id="leadForm" action="https://formspree.io/f/mqerwokn" method="POST" class="form-card">
-    <div class="progress"><span id="progressBar"></span></div><p class="step-label" id="stepLabel">Step 1 of 4</p>
-    <section class="form-step active" data-step="1"><h3>What can we help with?</h3><div class="choices">
-      <label><input type="radio" name="service" value="Kitchen Remodeling" required><span>Kitchen Remodeling</span></label>
-      <label><input type="radio" name="service" value="Bathroom Remodeling"><span>Bathroom Remodeling</span></label>
-      <label><input type="radio" name="service" value="Drywall / Texture Repair"><span>Drywall / Texture Repair</span></label>
-      <label><input type="radio" name="service" value="Tile Installation"><span>Tile Installation</span></label>
-      <label><input type="radio" name="service" value="Flooring"><span>Flooring</span></label>
-      <label><input type="radio" name="service" value="Painting"><span>Painting</span></label>
-      <label><input type="radio" name="service" value="Carpentry"><span>Carpentry</span></label>
-      <label><input type="radio" name="service" value="Handyman / Other"><span>Handyman / Other</span></label>
-    </div></section>
-    <section class="form-step location-step" data-step="2"><h3>What city is the project in?</h3><p class="step-help">Choose your area so we can quickly confirm service availability.</p><div class="choices city-choices">
-      <label><input type="radio" name="city" value="North Port" required><span>North Port</span></label>
-      <label><input type="radio" name="city" value="Venice"><span>Venice</span></label>
-      <label><input type="radio" name="city" value="Port Charlotte"><span>Port Charlotte</span></label>
-      <label><input type="radio" name="city" value="Englewood"><span>Englewood</span></label>
-      <label><input type="radio" name="city" value="Sarasota"><span>Sarasota</span></label>
-      <label><input type="radio" name="city" value="Punta Gorda"><span>Punta Gorda</span></label>
-      <label class="other-city-choice"><input id="otherCityRadio" type="radio" name="city" value="Other"><span>Other nearby area</span></label>
-    </div><label class="field other-city-field" id="otherCityField">Type your city<input id="otherCityInput" name="other_city" autocomplete="address-level2" placeholder="Enter your city"></label></section>
-    <section class="form-step" data-step="3"><h3>Tell us a little about it</h3><label class="field">Project details<textarea id="projectDetails" name="message" rows="5" minlength="10" placeholder="What would you like completed?" required></textarea><small class="field-help" id="projectHelp">Please include at least a short sentence about the work.</small></label></section>
-    <section class="form-step" data-step="4"><h3>How should we contact you?</h3><div class="field-row"><label class="field">Name<input id="nameInput" name="name" autocomplete="name" minlength="2" required><small class="field-help" id="nameHelp">Enter your name using letters.</small></label><label class="field">Phone<input id="phoneInput" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-\s]{10,14}" placeholder="(941) 555-1234" required><small class="field-help" id="phoneHelp">Please include all 10 digits, including the area code.</small></label></div><label class="field">Email <small>(optional)</small><input id="emailInput" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com"><small class="field-help" id="emailHelp">Example: name@example.com</small></label><label class="consent"><input id="consentInput" type="checkbox" required> I agree to be contacted about this estimate request.</label></section>
-    <div class="form-actions"><button type="button" class="btn back" id="backBtn">Back</button><button type="button" class="btn primary" id="nextBtn">Next</button><button type="submit" class="btn primary" id="submitBtn">Request Free Estimate</button></div>
-    <p class="form-note">Your information is only used to respond to your project request.</p>
-    <div class="success" id="success"><div>✓</div><h3>Estimate request sent!</h3><p>Thank you. We’ll be in touch as soon as possible.</p><a href="tel:+19414049777">Call (941) 404-9777</a></div>
-  </form>
-</section>
 </main>
 
 <footer><img src="images/logo.png" alt="Axels Trusted LLC" width="400" height="400" decoding="async"><div><strong>Axels Trusted LLC</strong><span>North Port, Florida</span><span>Monday–Saturday: 9 a.m.–7 p.m. · Sunday closed</span><a href="tel:+19414049777">(941) 404-9777</a><a href="mailto:estimates@axelstrusted.com">estimates@axelstrusted.com</a></div><p>© 2026 Axels Trusted LLC</p></footer>

@@ -11,9 +11,12 @@ function updateCompare(){
   if(!range||!before||!compare)return;
   const value=range.value;
   before.style.width=value+'%';
+  const beforeImage=before.querySelector('img');
+  if(beforeImage)beforeImage.style.width=compare.clientWidth+'px';
   compare.style.setProperty('--x',value+'%');
 }
 range?.addEventListener('input',updateCompare);
+window.addEventListener('resize',updateCompare);
 updateCompare();
 
 // Multi-step form
