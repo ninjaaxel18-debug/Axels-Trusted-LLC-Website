@@ -258,6 +258,13 @@ form?.addEventListener('submit',async event=>{
   try{
     const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
     if(!response.ok)throw new Error();
+    if(typeof window.gtag==='function'){
+      window.gtag('event','generate_lead',{
+        event_category:'estimate_form',
+        service:form.querySelector('input[name="service"]:checked')?.value||'unknown',
+        city:form.querySelector('input[name="city"]:checked')?.value||'unknown'
+      });
+    }
     localStorage.removeItem(draftKey);
     form.classList.add('completed');
   }catch(error){
