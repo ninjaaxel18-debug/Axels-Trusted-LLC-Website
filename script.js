@@ -258,6 +258,11 @@ form?.addEventListener('submit',async event=>{
   try{
     const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
     if(!response.ok)throw new Error();
+    // Count a lead only after Formspree confirms successful delivery.
+    // Send no names, contact details, or project descriptions to Meta.
+    try{
+      if(typeof window.fbq==='function')window.fbq('track','Lead');
+    }catch(_trackingError){/* Tracking must never interrupt the estimate request. */}
     if(typeof window.gtag==='function'){
       window.gtag('event','generate_lead',{
         event_category:'estimate_form',
